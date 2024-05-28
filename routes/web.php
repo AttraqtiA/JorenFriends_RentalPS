@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/edit/{transaksi}', [TransaksiController::class,'edit'])->name('edit_transaksi');
+Route::put('/update/{transaksi}', [TransaksiController::class,'update'])->name('transaksi_update');
