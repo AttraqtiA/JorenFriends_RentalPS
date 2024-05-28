@@ -8,6 +8,7 @@ use App\Models\Playstation;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+use Illuminate\Support\Facades\DB;
 
 class TransaksiController extends Controller
 {
@@ -67,8 +68,13 @@ class TransaksiController extends Controller
                 'durasiBermain'=> $validateData['durasiBermain'],
                 'jumlahOrang'=> $validateData['jumlahOrang'],
             ]);
-           
+
         return redirect()->route('');
+    }
+
+    public function read() {
+        $data_transaksi = DB::table("transaksis")->get();
+        return view('list_transaksi', compact('data_transaksi'));
     }
 
     /**
