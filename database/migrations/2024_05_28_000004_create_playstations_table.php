@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('playstations', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable(false);
             $table->string('nama')->nullable(false);
             $table->integer('harga')->nullable(false);
             $table->timestamps();

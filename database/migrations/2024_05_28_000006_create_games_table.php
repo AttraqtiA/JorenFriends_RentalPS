@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('genre_id');
             $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('image')->nullable(false);
             $table->string('nama')->nullable(false);
             $table->string('penerbit')->nullable(false);
             $table->integer('tahunRilis')->nullable(false);

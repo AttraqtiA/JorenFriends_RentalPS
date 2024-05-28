@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Peran;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PeranSeeder extends Seeder
 {
@@ -12,6 +13,14 @@ class PeranSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Peran::create([
+            'nama' => 'Admin'
+        ]);
+        Peran::create([
+            'nama' => 'Manajer'
+        ]);
+        Peran::create([
+            'nama' => 'Pelanggan'
+        ]);
     }
 }
