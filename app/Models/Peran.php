@@ -11,7 +11,7 @@ class Peran extends Model
 
     protected $guarded = ['id'];
 
-    public function peran()
+    public function user()
     {
         return $this->hasMany(User::class, 'peran_id', 'id');
     }

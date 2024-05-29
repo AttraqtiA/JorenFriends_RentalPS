@@ -20,12 +20,14 @@ class UserSeeder extends Seeder
             'email' => 'samuelmiracle@gmail.com',
             'password' => bcrypt('manajer123')
         ]);
+
         User::create([
             'peran_id' => 2,
             'nama' => 'Louis Fernando',
             'email' => 'louisfernando@gmail.com',
             'password' => bcrypt('admin123')
         ]);
+
         User::create([
             'peran_id' => 3,
             'nama' => 'Alice Johnson',

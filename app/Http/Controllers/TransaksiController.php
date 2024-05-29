@@ -53,6 +53,7 @@ class TransaksiController extends Controller
         $trans = Transaksi::Where('id',$transaksi->id)->first();
         return view('edit_transaksi',['user'=>$user,'playstation'=> $playstation,'transEdit' => $trans]);
     }
+
     public function update(Request $request, Transaksi $transaksi){
         $validateData=$request->validate([
             'pengguna_id'=>'required|integer',

@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-<section class="w-full min-h-full bg-white">
+<section class="pt-24 pl-8 md:pl-64 px-8 w-full min-h-full bg-white">
     <div class="container py-5">
         <div class="flex">
             <h1>Transaction List</h1>

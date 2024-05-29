@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Transaksi</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
+@extends('layouts.app')
+
+@section('content')
+    <section class="pt-24 pl-8 md:pl-64 px-8 container mt-5">
         <div class="text-center mb-4">
             <h1 class="display-5 fw-bold">Edit Transaksi</h1>
         </div>
@@ -45,7 +39,5 @@
             </div>
             <button type="submit" class="btn btn-primary">Edit</button>
         </form>
-    </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </section>
+@endsection
