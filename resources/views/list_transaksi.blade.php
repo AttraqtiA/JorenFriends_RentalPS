@@ -5,7 +5,7 @@
         <div class="container py-5">
             <div class="flex items-center justify-between w-full pb-3">
                 <h1 class="font-bold text-2xl text-center pb-0 mb-0">Transaction List</h1>
-                <a href="#" class="no-underline">
+                <a href="{{ route('create_transaksi') }}" class="no-underline">
                     <button type="button"
                         class="text-white bg-green-600 hover:bg-green-700 rounded-md text-lg px-5 py-1">Add Transaction</button>
                 </a>

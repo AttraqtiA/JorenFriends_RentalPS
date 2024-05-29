@@ -16,6 +16,8 @@ use App\Http\Controllers\TransaksiController;
 |
 */
 
+Route::get('/create', [TransaksiController::class,'create'])->name('create_transaksi');
+Route::get('/store', [TransaksiController::class,'store'])->name('store_transaksi');
 Route::get('/edit/{transaksi}', [TransaksiController::class,'edit'])->name('edit_transaksi');
 Route::put('/update/{transaksi}', [TransaksiController::class,'update'])->name('transaksi_update');
 Route::get('/', [TransaksiController::class,'read'])->middleware('auth')->name('list_transaksi');

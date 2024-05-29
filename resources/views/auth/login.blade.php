@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container ps-56">
+    <div class="container ps-0 md:ps-56">
         <div class="row justify-center">
             <section">
                 <div class="flex flex-col items-center justify-center p-8 mx-auto md:h-screen lg:py-0">
-                    <div class="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 bg-gray-800">
+                    <div class="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 bg-neutral-950">
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                             <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white">
-                                Login ke akun anda
+                                Login
                             </h1>
                             <form method="POST" action="{{ route('login') }}" class="space-y-4 md:space-y-6">
                                 @csrf
@@ -58,8 +58,8 @@
                                     class="w-full text-white bg-green-600 hover:bg-green-500 rounded-lg text-sm px-5 py-2.5 text-center">Masuk</button>
 
                                 <p class="text-center text-sm font-light text-gray-400">
-                                    Register <a href="{{ route('register') }}"
-                                        class="font-medium text-green-500 hover:underline">HERE!</a>
+                                    Don't have an account?<a href="{{ route('register') }}"
+                                        class="font-medium text-green-500 hover:underline"> Register</a>
                                 </p>
                             </form>
                         </div>

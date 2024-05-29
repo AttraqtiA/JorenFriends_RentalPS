@@ -27,15 +27,35 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        //
+        $user = User::all();
+        $playstation = Playstation::all();
+        return view('create_transaksi', ['user' => $user, 'playstation' => $playstation]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTransaksiRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'pengguna_id' => 'required|integer',
+            'playstation_id' => 'required|integer',
+            'tanggal' => 'required|date|date_format:Y-m-d',
+            'durasiBermain' => 'required|integer',
+            'jumlahOrang' => 'required|integer'
+        ]);
+
+        Transaksi::create(
+            [
+                'pengguna_id' => $validateData['pengguna_id'],
+                'playstation_id' => $validateData['playstation_id'],
+                'tanggal' => $validateData['tanggal'],
+                'durasiBermain' => $validateData['durasiBermain'],
+                'jumlahOrang' => $validateData['jumlahOrang'],
+            ]
+        );
+
+        return redirect()->route('list_transaksi');
     }
 
     /**
@@ -49,33 +69,37 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transaksi $transaksi){
+    public function edit(Transaksi $transaksi)
+    {
         $user = User::all();
         $playstation = Playstation::all();
-        $trans = Transaksi::Where('id',$transaksi->id)->first();
-        return view('edit_transaksi',['user'=>$user,'playstation'=> $playstation,'transEdit' => $trans]);
+        $trans = Transaksi::Where('id', $transaksi->id)->first();
+        return view('edit_transaksi', ['user' => $user, 'playstation' => $playstation, 'transEdit' => $trans]);
     }
 
-    public function update(Request $request, Transaksi $transaksi){
-        $validateData=$request->validate([
-            'pengguna_id'=>'required|integer',
-            'playstation_id'=>'required|integer',
-            'tanggal'=>'required|date|date_format:Y-m-d',
-            'durasiBermain'=>'required|integer',
-            'jumlahOrang'=>'required|integer'
+    public function update(Request $request, Transaksi $transaksi)
+    {
+        $validateData = $request->validate([
+            'pengguna_id' => 'required|integer',
+            'playstation_id' => 'required|integer',
+            'tanggal' => 'required|date|date_format:Y-m-d',
+            'durasiBermain' => 'required|integer',
+            'jumlahOrang' => 'required|integer'
         ]);
-            $transaksi->update([
-                'pengguna_id'=> $validateData['pengguna_id'],
-                'playstation_id'=> $validateData['playstation_id'],
-                'tanggal'=> $validateData['tanggal'],
-                'durasiBermain'=> $validateData['durasiBermain'],
-                'jumlahOrang'=> $validateData['jumlahOrang'],
-            ]);
 
-        return redirect()->route('');
+        $transaksi->update([
+            'pengguna_id' => $validateData['pengguna_id'],
+            'playstation_id' => $validateData['playstation_id'],
+            'tanggal' => $validateData['tanggal'],
+            'durasiBermain' => $validateData['durasiBermain'],
+            'jumlahOrang' => $validateData['jumlahOrang'],
+        ]);
+
+        return redirect()->route('list_transaksi');
     }
 
-    public function read(Request $request) {
+    public function read(Request $request)
+    {
         $data_transaksi = Transaksi::all();
         return view('list_transaksi', compact('data_transaksi'));
     }
