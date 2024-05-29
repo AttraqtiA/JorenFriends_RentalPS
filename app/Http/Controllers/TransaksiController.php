@@ -10,6 +10,8 @@ use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
 use Illuminate\Support\Facades\DB;
 
+use function Laravel\Prompts\search;
+
 class TransaksiController extends Controller
 {
     /**
@@ -73,8 +75,8 @@ class TransaksiController extends Controller
         return redirect()->route('');
     }
 
-    public function read() {
-        $data_transaksi = DB::table("transaksis")->get();
+    public function read(Request $request) {
+        $data_transaksi = Transaksi::all();
         return view('list_transaksi', compact('data_transaksi'));
     }
 

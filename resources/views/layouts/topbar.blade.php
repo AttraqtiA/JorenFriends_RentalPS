@@ -23,7 +23,7 @@
 
             <div class="flex items-center">
                 <div class="flex items-center ms-3">
-                    {{-- @guest --}}
+                    @guest
                         <div>
                             <button type="button"
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring focus:ring-gray-500"
@@ -56,8 +56,8 @@
                                 </li>
                             </ul>
                         </div>
-                    {{-- @else --}}
-                        {{-- <div>
+                    @else
+                        <div>
                             <button type="button"
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring focus:ring-gray-500"
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
@@ -115,8 +115,8 @@
                                     </form>
                                 </li>
                             </ul>
-                        </div> --}}
-                    {{-- @endguest --}}
+                        </div>
+                    @endguest
                 </div>
             </div>
         </div>

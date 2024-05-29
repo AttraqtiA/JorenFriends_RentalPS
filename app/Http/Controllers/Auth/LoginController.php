@@ -53,27 +53,24 @@ class LoginController extends Controller
         $admin = [
             'email' => $validatedData['email'],
             'password' => $validatedData['password'],
-            'role_id' => 1,
+            'peran_id' => 1,
         ];
         $manajer = [
             'email' => $validatedData['email'],
             'password' => $validatedData['password'],
-            'role_id' => 2,
+            'peran_id' => 2,
         ];
         $pelanggan = [
             'email' => $validatedData['email'],
             'password' => $validatedData['password'],
-            'role_id' => 3,
+            'peran_id' => 3,
         ];
 
         if (Auth::attempt($admin, true)) {
-            $this->isLogin(Auth::id());
             return redirect()->route('list_transaksi');
         } else if (Auth::attempt($manajer, true)) {
-            $this->isLogin(Auth::id());
             return redirect()->route('list_transaksi');
         } else if (Auth::attempt($pelanggan, true)) {
-            $this->isLogin(Auth::id());
             return redirect()->route('list_transaksi');
         }
 
