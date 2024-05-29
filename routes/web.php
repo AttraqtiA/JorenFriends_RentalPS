@@ -21,6 +21,7 @@ Route::get('/store', [TransaksiController::class,'store'])->name('store_transaks
 Route::get('/edit/{transaksi}', [TransaksiController::class,'edit'])->name('edit_transaksi');
 Route::put('/update/{transaksi}', [TransaksiController::class,'update'])->name('transaksi_update');
 Route::get('/', [TransaksiController::class,'read'])->middleware('auth')->name('list_transaksi');
+Route::get('/delete/{transaksi}', [TransaksiController::class,'destroy'])->name('delete_transaksi');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

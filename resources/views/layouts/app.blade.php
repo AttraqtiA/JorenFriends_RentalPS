@@ -34,6 +34,16 @@
 
 
     </div>
+    <script>
+        function showConfirmation(deleteUrl) {
+            document.getElementById('confirmDeleteLink').setAttribute('href', deleteUrl);
+            document.getElementById('confirmationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').classList.add('hidden');
+        }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 </body>

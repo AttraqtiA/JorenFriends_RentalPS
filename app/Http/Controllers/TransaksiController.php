@@ -107,8 +107,10 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy(Request $request, Transaksi $transaksi)
     {
-        //
+        $transaksi->delete();
+
+        return redirect()->route('list_transaksi');
     }
 }

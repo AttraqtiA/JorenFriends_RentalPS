@@ -53,9 +53,18 @@
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="#"
-                                        class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                                    <button onclick="showConfirmation('{{ route('delete_transaksi', $data->id) }}')" class="text-red-600 hover:underline">Delete</button>
                                 </td>
+                                <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+                                    <div class="bg-white rounded-lg shadow-lg p-6 w-1/3">
+                                        <h2 class="text-xl font-bold mb-4">Confirm Delete</h2>
+                                        <p class="mb-4">Are you sure you want to delete this transaction?</p>
+                                        <div class="flex justify-end">
+                                            <button onclick="closeModal()" class="mr-2 bg-gray-300 text-gray-800 px-4 py-2 rounded">No</button>
+                                            <a href="#" id="confirmDeleteLink" class="bg-red-600 text-white px-4 py-2 rounded">Yes, delete it</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </tr>
                         @endforeach
                     </tbody>
