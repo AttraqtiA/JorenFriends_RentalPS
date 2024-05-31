@@ -10,8 +10,8 @@
             @csrf
             <div class="mb-4">
                 <label for="pengguna_id" class="form-label">Pengguna</label>
-                <select id="pengguna_id" name="pengguna_id" class="form-select" required>
-                    <option value="">{{ $transEdit->pengguna->nama }}</option>
+                <select id="pengguna_id" name="pengguna_id" class="form-select">
+                    <option value="{{ $transEdit->pengguna->id }}">{{ $transEdit->pengguna->nama }}</option>
                     @foreach ($user as $use)
                         <option value="{{ $use->id }}">{{ $use->nama }}</option>
                     @endforeach
@@ -19,8 +19,8 @@
             </div>
             <div class="mb-4">
                 <label for="playstation_id" class="form-label">Playstation</label>
-                <select id="playstation_id" name="playstation_id" class="form-select" required>
-                    <option value="">{{ $transEdit->playstation->nama }}</option>
+                <select id="playstation_id" name="playstation_id" class="form-select">
+                    <option value="{{ $transEdit->playstation->id }}">{{ $transEdit->playstation->nama }}</option>
                     @foreach ($playstation as $play)
                         <option value="{{ $play->id }}">{{ $play->nama }}</option>
                     @endforeach

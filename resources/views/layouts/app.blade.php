@@ -43,7 +43,18 @@
         function closeModal() {
             document.getElementById('confirmationModal').classList.add('hidden');
         }
+
+        function showConfirmationonEdit(EditURL) {
+            document.getElementById('confirmEditLink').setAttribute('href', EditURL);
+            document.getElementById('confirmationModalEdit').classList.remove('hidden');
+        }
+
+        function closeModalEdit() {
+            document.getElementById('confirmationModalEdit').classList.add('hidden');
+        }
     </script>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 </body>
