@@ -9,7 +9,7 @@
             @method('put')
             @csrf
             <div class="mb-4">
-                <label for="pengguna_id" class="form-label">Pengguna</label>
+                <label for="pengguna_id" class="form-label">User</label>
                 <select id="pengguna_id" name="pengguna_id" class="form-select">
                     <option value="{{ $transEdit->pengguna->id }}">{{ $transEdit->pengguna->nama }}</option>
                     @foreach ($user as $use)
@@ -18,7 +18,7 @@
                 </select>
             </div>
             <div class="mb-4">
-                <label for="playstation_id" class="form-label">Playstation</label>
+                <label for="playstation_id" class="form-label">PlayStation</label>
                 <select id="playstation_id" name="playstation_id" class="form-select">
                     <option value="{{ $transEdit->playstation->id }}">{{ $transEdit->playstation->nama }}</option>
                     @foreach ($playstation as $play)
@@ -27,16 +27,16 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="tanggal" class="form-label">Tanggal</label>
+                <label for="tanggal" class="form-label">Date</label>
                 <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $transEdit->tanggal }}">
             </div>
             <div class="mb-3">
-                <label for="durasiBermain" class="form-label">Durasi Bermain</label>
+                <label for="durasiBermain" class="form-label">Playing Duration</label>
                 <input type="number" class="form-control" id="durasiBermain" name="durasiBermain"
                     value="{{ $transEdit->durasiBermain }}">
             </div>
             <div class="mb-3">
-                <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
+                <label for="jumlahOrang" class="form-label">Total Players</label>
                 <input type="number" class="form-control" id="jumlahOrang" name="jumlahOrang"
                     value="{{ $transEdit->jumlahOrang }}">
             </div>
