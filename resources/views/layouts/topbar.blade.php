@@ -18,7 +18,7 @@
                 </a>
             </div>
 
-            <h1 class="text-base md:text-2xl ml-4 md:ml-0 font-semibold text-green-500">Apa kabar,
+            <h1 class="text-base md:text-2xl ml-4 md:ml-0 font-semibold text-green-500">Hello,
                 Admin!</h1>
 
             <div class="flex items-center">
@@ -82,15 +82,15 @@
                             <div class="px-4 py-3" role="none">
                                 @if (Auth::user()->isOwner())
                                     <p class="text-sm text-gray-900" role="none">
-                                        Selamat datang kembali, Owner!
+                                        Welcome, Owner!
                                     </p>
                                 @elseif (Auth::user()->isAdmin())
                                     <p class="text-sm text-gray-900" role="none">
-                                        Selamat datang kembali, Admin!
+                                        Welcome, Admin!
                                     </p>
                                 @else
                                     <p class="text-sm text-gray-900" role="none">
-                                        Sudahkah nyemil Lisahwan hari ini?
+                                       Have you eaten today
                                     </p>
                                 @endif
                                 <br>
@@ -108,7 +108,7 @@
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                                        Keluar
+                                        Logout
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -139,7 +139,7 @@
                                 <path
                                     d="M0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm14-7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4Z" />
                             </svg>
-                            <span class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_1 ?? 'text-green-500' }}">Daftar Transaksi</span>
+                            <span class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_1 ?? 'text-green-500' }}">Transaction List</span>
                         </a>
                     </li>
 
@@ -152,7 +152,7 @@
                                 <path
                                     d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
                             </svg>
-                            <span class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_2 ?? '' }}">Daftar Game</span>
+                            <span class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_2 ?? '' }}">Game List</span>
                         </a>
                     </li>
 
@@ -166,7 +166,7 @@
                                     d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
                             </svg>
                             <span
-                                class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_3 ?? '' }}">Daftar Playstation</span>
+                                class="text-gray-100 flex-1 ms-3 whitespace-nowrap {{ $active_3 ?? '' }}">Playstation List</span>
                         </a>
                     </li>
 
