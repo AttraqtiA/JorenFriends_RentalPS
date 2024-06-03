@@ -8,7 +8,7 @@
         <form action="{{ route('store_transaksi') }}" method="GET" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
-                <label for="pengguna_id" class="form-label">Pengguna</label>
+                <label for="pengguna_id" class="form-label">User</label>
                 <select id="pengguna_id" name="pengguna_id" class="form-select" required>
                     <option value="">Pilih pengguna</option>
                     @foreach ($user as $use)
@@ -26,20 +26,20 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="tanggal" class="form-label">Tanggal</label>
-                <input type="date" class="form-control" id="tanggal" name="tanggal" value="">
+                <label for="tanggal" class="form-label">Date</label>
+                <input type="date" class="form-control" id="tanggal" name="tanggal" value="" required>
             </div>
             <div class="mb-3">
-                <label for="durasiBermain" class="form-label">Durasi Bermain</label>
+                <label for="durasiBermain" class="form-label">Playing Duration</label>
                 <input type="number" class="form-control" id="durasiBermain" name="durasiBermain"
-                    value="">
+                    value="" required>
             </div>
             <div class="mb-3">
-                <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
+                <label for="jumlahOrang" class="form-label">Total Players</label>
                 <input type="number" class="form-control" id="jumlahOrang" name="jumlahOrang"
-                    value="">
+                    value="" required>
             </div>
-            <button type="submit" class="btn btn-primary">Tambah</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </section>
 @endsection
